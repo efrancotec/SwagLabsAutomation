@@ -25,10 +25,7 @@
 
   <ItemGroup>
     <Folder Include="Drivers\" />
-    <Folder Include="Interfaces\" />
-    <Folder Include="Data\" />
     <Folder Include="Entities\" />
-    <Folder Include="Utils\" />
   </ItemGroup>
 
 </Project>
