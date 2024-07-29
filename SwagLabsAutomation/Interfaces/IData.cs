@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SwagLabsAutomation.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,5 +10,7 @@ namespace SwagLabsAutomation.Interfaces
     public interface IData
     {
         string GetUrl();
+
+        Login GetCredentials();
     }
 }

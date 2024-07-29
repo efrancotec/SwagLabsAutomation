@@ -24,8 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Drivers\" />
-    <Folder Include="Entities\" />
+    <Folder Include="Features\" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
+using SwagLabsAutomation.Entities;
 using SwagLabsAutomation.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -11,22 +12,34 @@ namespace SwagLabsAutomation.Data
     public class JSONData : IData
     {
 
+        private string DATA_PATH = Directory.GetParent(Environment.CurrentDirectory)!.Parent!.Parent!.FullName + "/Data";
 
         public string GetUrl()
         {
-            return getData("genera_info.json");
+            return GetData("general_info.json", "url");
+        }
+
+        public Login GetCredentials()
+        {
+            string fileName = "login_credentials.json";
+            return new Login
+            {
+                Username = GetData(fileName, "username"),
+                Password = GetData(fileName, "password")
+            };
         }
 
         // PRIVATE METHODS
-        private string getData(string fileName)
+        private string GetData(string fileName, string key)
         {
-            var path = Directory.GetParent(Environment.CurrentDirectory)!.Parent!.Parent!.FullName + "/Data";
             var info = new ConfigurationBuilder()
-                .SetBasePath(path)
-                .AddJsonFile("general_info.json")
+                .SetBasePath(DATA_PATH)
+                .AddJsonFile(fileName)
                 .Build();
 
-            return info.GetSection(fileName).Value!;
+            return info.GetSection(key).Value!;
         }
+
+
     }
 }
