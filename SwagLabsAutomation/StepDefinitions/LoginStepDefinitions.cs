@@ -42,10 +42,10 @@ namespace SwagLabsAutomation.StepDefinitions
         public void ThenTheUserIsRedirectedToHomePage()
         {
             _homePage = new HomePage(_loginPage!.GetDriver());
-            string result = _homePage.getElementTitle();
+            string result = _homePage.GetElementTitle();
+            _homePage.Quit();
 
             Assert.AreEqual("Swag Labs", result);
-            _homePage.Quit();
         }
     }
 }

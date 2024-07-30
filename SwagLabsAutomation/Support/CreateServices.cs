@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using OpenQA.Selenium;
 using SwagLabsAutomation.Data;
 using SwagLabsAutomation.Interfaces;
 using System;
@@ -22,5 +23,6 @@ namespace SwagLabsAutomation.Support
         }
 
         public static IData? Data {  get; set; }
+        public static IWebDriver? Driver { get; set; }
     }
 }

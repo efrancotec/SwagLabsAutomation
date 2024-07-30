@@ -80,6 +80,15 @@ namespace SwagLabsAutomation.Drivers
             WebDriverWait wait = new WebDriverWait(_driver!, TimeSpan.FromSeconds(seconds));
             return wait.Until(e => e.FindElement(locator));
         }
+        public void ClickElementByText(By locator, string text)
+        {
+            var elements = _driver!.FindElements(locator);
+
+            foreach (var element in elements)
+            {
+                if (element.Text.Equals(text)) element.Click();
+            }
+        }
         #endregion
 
         #region Selects

@@ -51,6 +51,13 @@ namespace SwagLabsAutomation.Pages
         {
             ClickOnButton(_loginButtonLocator!);
         } 
+        public void Login(string username, string password)
+        {
+            ExplicitWait(_userNameTextFileLocator!, 5);
+            TypeText(_userNameTextFileLocator!, username);
+            TypeText(_passwordTextFileLocator!, password);
+            ClickOnButton(_loginButtonLocator!);
+        }
         #endregion
 
         #region Private Methods
